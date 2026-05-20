@@ -1,1 +1,188 @@
 # Frans-tailoring
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fran's Tailoring — Alterations & Repairs in Belvidere & Rockford, IL</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --rose-50: #fbeaf0; --rose-100: #f4c0d1; --rose-400: #D4537E;
+    --rose-600: #993556; --rose-800: #72243E; --rose-900: #4B1528;
+    --wine: #3a2e35; --cream: #fdf7f9;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; font-weight: 300; color: var(--wine); background: #fff; line-height: 1.7; }
+  .topbar { background: var(--rose-900); color: var(--rose-100); text-align: center; padding: 8px 1rem; font-size: 12px; letter-spacing: 0.1em; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 3rem; border-bottom: 0.5px solid var(--rose-100); background: #fff; position: sticky; top: 0; z-index: 100; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--rose-900); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 12px; letter-spacing: 0.1em; color: var(--rose-600); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--rose-900); }
+  .nav-cta { background: var(--rose-600); color: #fff !important; padding: 8px 20px; border-radius: 30px; }
+  .nav-cta:hover { background: var(--rose-900) !important; }
+  .hero { background: var(--rose-50); padding: 5rem 3rem 4rem; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; border-radius: 50%; background: var(--rose-100); opacity: 0.3; }
+  .hero::after { content: ''; position: absolute; bottom: -80px; right: -40px; width: 250px; height: 250px; border-radius: 50%; background: var(--rose-100); opacity: 0.25; }
+  .hero-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+  .eyebrow { display: inline-block; font-size: 11px; letter-spacing: 0.18em; color: var(--rose-600); background: var(--rose-100); padding: 5px 18px; border-radius: 30px; margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 54px); color: var(--rose-900); font-weight: 400; line-height: 1.2; margin-bottom: 1.25rem; }
+  .hero h1 em { font-style: italic; color: var(--rose-600); }
+  .hero p { font-size: 15px; color: var(--rose-800); max-width: 440px; margin: 0 auto 2rem; line-height: 1.8; }
+  .btn-primary { display: inline-block; background: var(--rose-600); color: #fff; padding: 13px 36px; border-radius: 40px; font-size: 13px; letter-spacing: 0.1em; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Lato', sans-serif; }
+  .btn-primary:hover { background: var(--rose-900); transform: translateY(-1px); }
+  .divider { display: flex; align-items: center; gap: 1rem; padding: 0 3rem; margin: 0.5rem 0; }
+  .divider-line { flex: 1; height: 0.5px; background: var(--rose-100); }
+  .divider-icon { color: var(--rose-400); font-size: 20px; }
+  section { padding: 4rem 3rem; }
+  section h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--rose-900); margin-bottom: 0.35rem; }
+  .section-sub { font-size: 12px; letter-spacing: 0.1em; color: var(--rose-600); margin-bottom: 2rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 1rem; }
+  .svc-card { background: var(--rose-50); border: 0.5px solid var(--rose-100); border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+  .svc-card:hover { border-color: var(--rose-400); transform: translateY(-2px); }
+  .svc-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--rose-100); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 22px; color: var(--rose-600); }
+  .svc-card h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; color: var(--rose-900); margin-bottom: 0.5rem; }
+  .svc-card p { font-size: 13px; color: var(--rose-800); line-height: 1.6; margin-bottom: 0.75rem; }
+  .svc-price { font-size: 13px; color: var(--rose-600); }
+  .price-note { font-size: 11px; color: var(--rose-600); margin-top: 1rem; }
+  .about-section { background: var(--cream); }
+  .about-box { display: flex; gap: 2rem; align-items: flex-start; background: #fff; border: 0.5px solid var(--rose-100); border-radius: 20px; padding: 2.5rem; max-width: 700px; }
+  .about-initial { width: 72px; height: 72px; border-radius: 50%; background: var(--rose-600); color: #fff; font-family: 'Playfair Display', serif; font-size: 30px; font-style: italic; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .about-text h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--rose-900); margin-bottom: 0.75rem; }
+  .about-text p { font-size: 14px; color: var(--rose-800); line-height: 1.9; }
+  .about-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.25rem; }
+  .badge { background: var(--rose-50); border: 0.5px solid var(--rose-100); color: var(--rose-800); font-size: 11px; letter-spacing: 0.08em; padding: 5px 14px; border-radius: 20px; }
+  .booking-section { background: var(--rose-50); }
+  .booking-inner { max-width: 600px; }
+  .form-box { background: #fff; border: 0.5px solid var(--rose-100); border-radius: 20px; padding: 2.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-field { margin-bottom: 1.25rem; }
+  .form-field label { display: block; font-size: 11px; letter-spacing: 0.1em; color: var(--rose-600); margin-bottom: 7px; }
+  .form-field input, .form-field select, .form-field textarea { width: 100%; border: 0.5px solid var(--rose-100); border-radius: 10px; padding: 11px 14px; font-size: 14px; font-family: 'Lato', sans-serif; font-weight: 300; background: var(--rose-50); color: var(--wine); outline: none; transition: border-color 0.2s; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--rose-400); background: #fff; }
+  .form-field textarea { min-height: 90px; resize: vertical; }
+  .submit-btn { width: 100%; padding: 14px; background: var(--rose-600); color: #fff; border: none; border-radius: 40px; font-size: 14px; letter-spacing: 0.1em; cursor: pointer; font-family: 'Lato', sans-serif; transition: background 0.2s; margin-top: 0.5rem; }
+  .submit-btn:hover { background: var(--rose-900); }
+  .confirm-msg { display: none; background: var(--rose-50); border: 0.5px solid var(--rose-100); border-radius: 12px; padding: 1rem 1.25rem; text-align: center; font-size: 14px; color: var(--rose-800); margin-top: 1rem; }
+  .contact-strip { background: var(--rose-900); padding: 2rem 3rem; display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; }
+  .contact-item { display: flex; align-items: center; gap: 10px; }
+  .contact-item i { font-size: 18px; color: var(--rose-400); }
+  .contact-item span { font-size: 14px; color: var(--rose-100); }
+  footer { background: var(--wine); padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+  footer span { font-size: 12px; color: var(--rose-100); opacity: 0.7; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-inner > * { animation: fadeUp 0.6s ease both; }
+  .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-inner > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-inner > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-inner > *:nth-child(4) { animation-delay: 0.4s; }
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.5rem; } .nav-links { gap: 1rem; } .nav-cta { display: none; }
+    .hero { padding: 3.5rem 1.5rem 3rem; } section { padding: 3rem 1.5rem; } .divider { padding: 0 1.5rem; }
+    .form-row { grid-template-columns: 1fr; } .about-box { flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; }
+    .about-badges { justify-content: center; } .contact-strip { padding: 1.5rem; gap: 1rem; }
+    footer { padding: 1.25rem 1.5rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">Now accepting new clients in Belvidere &amp; Rockford, IL</div>
+<nav>
+  <a class="logo" href="#">Fran's Tailoring</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#booking">Book</a></li>
+    <li><a href="tel:8153198472" class="nav-cta">Call now</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">20 years of experience</span>
+    <h1>Beautiful clothes,<br><em>perfectly fitted.</em></h1>
+    <p>Expert alterations, repairs &amp; custom tailoring — done with care from my home studio in Belvidere, IL.</p>
+    <a href="#booking" class="btn-primary">Book an appointment</a>
+  </div>
+</section>
+<div class="divider"><div class="divider-line"></div><i class="ti ti-scissors divider-icon" aria-hidden="true"></i><div class="divider-line"></div></div>
+<section id="services">
+  <h2>Services &amp; pricing</h2>
+  <div class="section-sub">Every garment handled with love and care</div>
+  <div class="services-grid">
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-ruler-2" aria-hidden="true"></i></div><h3>Alterations &amp; hemming</h3><p>Pants, dresses, skirts, jacket sleeves &amp; more</p><div class="svc-price">from $15</div></div>
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-needle-thread" aria-hidden="true"></i></div><h3>Clothing repairs</h3><p>Seams, linings, patches &amp; general fixes</p><div class="svc-price">from $10</div></div>
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-tool" aria-hidden="true"></i></div><h3>Zippers &amp; buttons</h3><p>Replacements, snaps, hooks &amp; closures</p><div class="svc-price">from $5</div></div>
+    <div class="svc-card"><div class="svc-icon"><i class="ti ti-shirt" aria-hidden="true"></i></div><h3>Custom tailoring</h3><p>Resizing, taking in/out &amp; custom fit</p><div class="svc-price">price on request</div></div>
+  </div>
+  <p class="price-note">* Prices are estimates. Final quote given at drop-off based on garment &amp; complexity.</p>
+</section>
+<div class="divider"><div class="divider-line"></div><i class="ti ti-heart divider-icon" aria-hidden="true"></i><div class="divider-line"></div></div>
+<section id="about" class="about-section">
+  <h2>About Fran</h2>
+  <div class="section-sub">Your local tailoring expert</div>
+  <div class="about-box">
+    <div class="about-initial">F</div>
+    <div class="about-text">
+      <h3>Craftsmanship you can trust</h3>
+      <p>With over 20 years of tailoring experience, I offer expert alterations, repairs, and custom fitting from my home studio. I take pride in quality work and personal service — every garment is treated with care. I work with all types of clothing, from everyday wear to formal attire, uniforms, and everything in between.</p>
+      <div class="about-badges">
+        <span class="badge">20+ years experience</span>
+        <span class="badge">Home studio</span>
+        <span class="badge">All garment types</span>
+        <span class="badge">Personal service</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"><div class="divider-line"></div><i class="ti ti-calendar divider-icon" aria-hidden="true"></i><div class="divider-line"></div></div>
+<section id="booking" class="booking-section">
+  <div class="booking-inner">
+    <h2>Book an appointment</h2>
+    <div class="section-sub">I'll confirm your visit by phone</div>
+    <div class="form-box">
+      <div class="form-row">
+        <div class="form-field"><label>Your name</label><input type="text" id="f-name" placeholder="Full name"/></div>
+        <div class="form-field"><label>Phone number</label><input type="tel" id="f-phone" placeholder="(815) 000-0000"/></div>
+      </div>
+      <div class="form-field"><label>Service needed</label>
+        <select id="f-service"><option value="">Select a service...</option><option>Alterations &amp; hemming</option><option>Clothing repairs</option><option>Zipper or button fix</option><option>Custom tailoring</option><option>Other / not sure</option></select>
+      </div>
+      <div class="form-field"><label>Preferred date</label><input type="date" id="f-date"/></div>
+      <div class="form-field"><label>Tell me about your garment (optional)</label><textarea id="f-notes" placeholder="e.g. pants that need hemming, jacket with broken zipper..."></textarea></div>
+      <button class="submit-btn" onclick="submitForm()">Request appointment</button>
+      <div class="confirm-msg" id="confirm-msg">
+        Thank you! Fran will call you at <strong id="confirm-phone"></strong> to confirm your appointment.
+      </div>
+    </div>
+  </div>
+</section>
+<div class="contact-strip">
+  <div class="contact-item"><i class="ti ti-phone" aria-hidden="true"></i><span>(815) 319-8472</span></div>
+  <div class="contact-item"><i class="ti ti-map-pin" aria-hidden="true"></i><span>Belvidere &amp; Rockford, IL</span></div>
+  <div class="contact-item"><i class="ti ti-clock" aria-hidden="true"></i><span>Mon–Sat, 9am–6pm</span></div>
+  <div class="contact-item"><i class="ti ti-home" aria-hidden="true"></i><span>Home-based studio</span></div>
+</div>
+<footer>
+  <span>© 2026 Fran's Tailoring</span>
+  <span>Belvidere &amp; Rockford, IL &nbsp;·&nbsp; (815) 319-8472</span>
+</footer>
+<script>
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const service = document.getElementById('f-service').value;
+  if (!name || !phone || !service) { alert('Please fill in your name, phone number, and the service you need.'); return; }
+  document.getElementById('confirm-phone').textContent = phone;
+  document.getElementById('confirm-msg').style.display = 'block';
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-phone').value = '';
+  document.getElementById('f-service').value = '';
+  document.getElementById('f-date').value = '';
+  document.getElementById('f-notes').value = '';
+}
+</script>
+</body>
+</html>
